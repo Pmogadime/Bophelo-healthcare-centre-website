@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry | Bophelo Mother & Child Healthcare Centre</title>
+    <meta name="description" content="Enquire about maternal health, child immunization, volunteering, or corporate sponsorship at Bophelo Mother & Child Healthcare Centre.">
+    <meta name="keywords" content="Bophelo, healthcare enquiry, maternal care, child health, volunteer, sponsor, Polokwane">
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header and Navigation Bar -->
+    <header class="site-header">
+        <div class="logo-container">
+            <span class="brand-logo">💉 Bophelo</span>
+            <p class="slogan">"Bringing health to life, reaching milestones with you"</p>
+        </div>
+        <nav class="main-nav">
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+            <ul id="nav-links" class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="enquiry.html" class="active">Enquiry</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <section class="form-section">
+            <h1>Service & Volunteer Enquiry</h1>
+            <p>Please fill out the form below to enquire about our maternal services, child immunizations, volunteering opportunities, or corporate sponsorships.</p>
+
+            <!-- Enquiry Form with JavaScript Validation -->
+            <form id="enquiry-form" class="styled-form" action="#" method="POST" novalidate>
+                
+                <!-- User Name Input -->
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <span id="name-error" class="error-message"></span>
+                </div>
+
+                <!-- User Surname Input -->
+                <div class="form-group">
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" required>
+                    <span id="surname-error" class="error-message"></span>
+                </div>
+
+                <!-- Date of Birth Input -->
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <span id="dob-error" class="error-message"></span>
+                </div>
+
+                <!-- Email Address Input -->
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="email-error" class="error-message"></span>
+                </div>
+
+                <!-- Phone Number Input -->
+                <div class="form-group">
+                    <label for="phone">Phone Number (10 digits):</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span id="phone-error" class="error-message"></span>
+                </div>
+
+                <!-- Preferred Appointment Date Input -->
+                <div class="form-group">
+                    <label for="date">Preferred Appointment Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    <span id="date-error" class="error-message"></span>
+                </div>
+
+                <!-- Service Dropdown Menu -->
+                <div class="form-group">
+                    <label for="carcategory">Enquiry Category / Service:</label>
+                    <select id="carcategory" name="carcategory" required>
+                        <option value="">-- Please Select an Option --</option>
+                        <option value="maternal">Maternal & Antenatal Care</option>
+                        <option value="immunization">Child Health & Immunization</option>
+                        <option value="volunteer">Volunteering Opportunity</option>
+                        <option value="sponsor">Corporate Sponsorship</option>
+                    </select>
+                    <span id="carcategory-error" class="error-message"></span>
+                </div>
+
+                <!-- Message Box Input -->
+                <div class="form-group">
+                    <label for="message">Enquiry Details / Comments:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Provide any additional details about your enquiry..." required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="cta-button">Submit Enquiry</button>
+
+                <!-- Success / Error Status Feedback Area -->
+                <div id="form-status" class="form-status"></div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-graphic">❤️💉</div>
+        <p>&copy; <span id="year">2026</span> Bophelo Mother & Child Healthcare Centre. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to External JavaScript file -->
+    <script src="js/javascript.js"></script>
+</body>
+</html>

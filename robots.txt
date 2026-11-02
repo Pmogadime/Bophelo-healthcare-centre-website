@@ -1,0 +1,11 @@
+# ==========================================
+# ROBOTS.TXT - SEARCH ENGINE CRAWLER RULES
+# Bophelo Mother & Child Healthcare Centre
+# ==========================================
+
+# Allow all search engine web crawlers full access to the site
+User-agent: *
+Allow: /
+
+# Point crawlers directly to the website XML sitemap
+Sitemap: https://bophelohealthcare.co.za/sitemap.xml
