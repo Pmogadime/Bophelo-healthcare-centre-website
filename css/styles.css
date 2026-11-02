@@ -1,0 +1,407 @@
+/* ==========================================================================
+   1. ROOT VARIABLES & COLOR PALETTE (Soft Lilac #f3e8ff & Electric Indigo #4f46e5)
+   ========================================================================== */
+:root {
+    --primary: #4f46e5;       /* Electric Indigo accent color */
+    --primary-dark: #312e81;  /* Deep Indigo slate for headings and footer */
+    --accent: #7c3aed;        /* Secondary purple highlight */
+    --bg-light: #f3e8ff;      /* Soft lilac page background */
+    --surface: #ffffff;       /* Pure white container surface */
+    --text-main: #1f2937;     /* High-contrast dark charcoal body text */
+    --text-muted: #4b5563;    /* Muted gray subtext */
+    --border: #d8b4fe;        /* Soft purple border color */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(79, 70, 229, 0.08);
+    --shadow-lg: 0 10px 25px rgba(79, 70, 229, 0.15);
+    --radius: 12px;
+}
+
+/* Global Box-Sizing & Reset Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Base Body Layout */
+body {
+    background-color: var(--bg-light); 
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Anchor Tag Reset */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   2. STICKY NAVIGATION HEADER COMPONENT
+   ========================================================================== */
+header {
+    background-color: var(--surface);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border);
+}
+
+header h1 {
+    font-size: 1.25rem;
+    color: var(--primary-dark);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary);
+    background-color: #ede9fe;
+}
+
+
+/* ==========================================================================
+   3. LAYOUT CONTAINERS & SIDE-BY-SIDE HERO GRID
+   ========================================================================== */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: var(--surface);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+}
+
+/* CSS Grid 50/50 Split for Homepage Hero Section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+}
+
+.hero-slogan {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* Fixed-Height Image Box Wrapper for Aspect Ratio Control */
+.hero-image-box {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #e9d5ff;
+    box-shadow: var(--shadow-sm);
+}
+
+.hero-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents image distortion */
+    display: block;
+}
+
+
+/* ==========================================================================
+   4. BUTTON STYLING & INTERACTIVE STATES
+   ========================================================================== */
+.btn-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3730a3;
+}
+
+.btn-secondary {
+    background-color: var(--surface);
+    color: var(--primary-dark);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background-color: #f5f3ff;
+}
+
+
+/* ==========================================================================
+   5. RESPONSIVE CSS GRIDS (SERVICES, GALLERY, LOCATIONS)
+   ========================================================================== */
+.services-grid,
+.gallery-grid,
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.service-card,
+.gallery-card,
+.about-card,
+.location-card {
+    background-color: #faf5ff;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-image-box,
+.gallery-image-box {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background-color: #e9d5ff;
+}
+
+.service-image-box img,
+.gallery-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.service-card-body {
+    padding: 15px;
+}
+
+.service-card-body h3 {
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+}
+
+.service-card-body p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.citation {
+    font-size: 0.78rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.map-wrapper {
+    margin-top: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+
+/* ==========================================================================
+   6. FORM COMPONENTS & GLOBAL FOOTER
+   ========================================================================== */
+.form-card {
+    background-color: #faf5ff;
+    padding: 25px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    max-width: 650px;
+    margin: 25px auto 0;
+}
+
+.form-card p {
+    margin-bottom: 15px;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: var(--surface);
+    margin-top: 5px;
+}
+
+.form-card input:focus,
+.form-card select:focus,
+.form-card textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.error {
+    color: #dc2626;
+    font-size: 0.8rem;
+    margin-top: 3px;
+    display: block;
+}
+
+.form-status {
+    margin-top: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--primary-dark);
+    color: #c7d2fe;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+    margin-top: 60px;
+}
+
+
+/* ==========================================================================
+   7. CSS ANIMATIONS & INTERACTIVE TRANSITIONS
+   ========================================================================== */
+/* Page Load Entrance Fade Animation */
+@keyframes pageLoadFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main section {
+    animation: pageLoadFadeIn 0.8s ease-out forwards;
+}
+
+/* Keyframes for Upward Sliding Core Services List */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up-list {
+    animation: slideUp 1s ease-out forwards;
+}
+
+/* Hero Image Hover Glow Effect */
+.hero-glow {
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.hero-glow:hover {
+    box-shadow: 0 12px 35px rgba(79, 70, 229, 0.35);
+    transform: translateY(-4px);
+}
+
+/* JavaScript Scroll Reveal Class */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card Hover Elevation Effect */
+.service-card,
+.location-card {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.location-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(79, 70, 229, 0.2);
+}
+
+
+/* ==========================================================================
+   8. RESPONSIVE MEDIA QUERIES (Breakpoints for Mobile / Tablets)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr; /* Stacks 50/50 grid to single column */
+        padding: 30px;
+    }
+    .hero-image-box {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
